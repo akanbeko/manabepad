@@ -1,24 +1,60 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| name               | string | null: false               |
+| encrypted_password | string | null: false               |
+| email              | string | null: false, unique: true |
+| user_phone         | string | null: false               |
+| occupation         | integer| null: false               |
 
-Things you may want to cover:
 
-* Ruby version
+### Association
+has_many :sites
+has_many :datas
 
-* System dependencies
+## sitesテーブル
+| Column             |Type        | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | null: false, foreign_key: true |
+| sitename           | string     | null: false                    |
+| home_address       | string     | null: false                    |
+| site_address       | string     | null: false                    |
+| progress           | string     | null: false                    |
+| site_phone         | string     | null: false                    |
+| construcion_date   | string     | null: false                    |
+| remark             | text       | null: false                    |
 
-* Configuration
 
-* Database creation
+### Association
+belongs_to :user
+has_one :site
 
-* Database initialization
 
-* How to run the test suite
+## dataテーブル
+| Column         |Type        | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| user           | references | null: false, foreign_key: true |
+| site           | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+belongs_to :user
+belongs_to :site
+has_one :document
 
-* Deployment instructions
 
-* ...
+## documentテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | -------------------------------|
+| data               | references | null: false, foreign_key: true |
+| pdf                | string     | null: false                    |
+| jpg                | string    | null: false                    |
+
+### Association
+belongs_to :data
+
+## commentテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | -------------------------------|
+| user               | references | null: false, foreign_key: true |
+| text               | text       | null: false                    |
