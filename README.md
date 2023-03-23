@@ -31,7 +31,7 @@ belongs_to :user
 has_one :site
 
 
-## dataテーブル
+## sites_dataテーブル
 | Column         |Type        | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | user           | references | null: false, foreign_key: true |
@@ -43,7 +43,7 @@ belongs_to :site
 has_one :document
 
 
-## documentテーブル
+## dataテーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | -------------------------------|
 | data               | references | null: false, foreign_key: true |
