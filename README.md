@@ -5,7 +5,7 @@
 | name               | string | null: false               |
 | encrypted_password | string | null: false               |
 | email              | string | null: false, unique: true |
-| user_phone         | string | null: false               |
+| user_phone         | string |                           |
 | occupation         | integer| null: false               |
 
 
@@ -19,11 +19,11 @@ has_many :datas
 | user               | references | null: false, foreign_key: true |
 | sitename           | string     | null: false                    |
 | home_address       | string     | null: false                    |
-| site_address       | string     | null: false                    |
+| site_address       | string     |                                |
 | progress           | string     | null: false                    |
 | site_phone         | string     | null: false                    |
-| construcion_date   | string     | null: false                    |
-| remark             | text       | null: false                    |
+| construcion_date   | string     |                                |
+| remark             | text       |                                |
 
 
 ### Association
@@ -47,8 +47,8 @@ has_one :document
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | -------------------------------|
 | data               | references | null: false, foreign_key: true |
-| pdf                | string     | null: false                    |
-| jpg                | string    | null: false                    |
+| pdf                | string     |                                |
+| jpg                | string     |                                |
 
 ### Association
 belongs_to :data
