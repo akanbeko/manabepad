@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sites/index'
   devise_for :users
-  root "sites#index"
+  root to: "sites#index"
+  resources :users, only: [:edit, :update]
   end
