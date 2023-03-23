@@ -1,13 +1,15 @@
 <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
-      <h2>竹ヶ原興業（株）Manabe Pad</h2>
-      <h5>ログイン画面</h5>
+      <h2>Manabe Pad</h2>
+      <%= link_to image_tag('logo.png' , size: '350x120'), "/" %>
+   <br><br><br>
       <%= render "devise/shared/links"%>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
         <div class='field'>
+        <h3>ログイン画面</h3>
           <div class='field-label'>
             <%= f.label :email%>
           </div>

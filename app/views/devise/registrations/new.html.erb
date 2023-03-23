@@ -1,13 +1,15 @@
 <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
-      <h2>竹ヶ原興業（株）Manabe Pad</h2>
-      <h5>新規アカウントの作成</h5>
+    <h2>Manabe Pad</h2>
+      <%= link_to image_tag('logo.png' , size: '350x120'), "/" %>
+      
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class='field'>
+        <h3>新規登録</h3>
           <div class='field-label'>
             名前（フルネーム）
           </div>
