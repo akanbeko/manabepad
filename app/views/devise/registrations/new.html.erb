@@ -1,7 +1,7 @@
 <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
-      <h2>Create Account</h2>
+      <h2>竹ヶ原興業（株）Manabe Pad</h2>
       <h5>新規アカウントの作成</h5>
     </div>
     <div class='account-page__inner--right user-form'>
@@ -9,7 +9,7 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :name%>
+            名前（フルネーム）
           </div>
           <div class='field-input'>
             <%= f.text_field :name, autofocus: true%>
@@ -17,7 +17,7 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :email%>
+            メールアドレス
           </div>
           <div class='field-input'>
             <%= f.email_field :email%>
@@ -25,7 +25,7 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :password%>
+          パスワード
             <i>(英数字6文字以上)</i>
           </div>
           <div class='field-input'>
@@ -34,12 +34,34 @@
         </div>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :password_confirmation%>
+            パスワード
+            <i>(もう一度入力)</i>
           </div>
           <div class='field-input'>
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
           </div>
         </div>
+
+        <div class='field'>
+          <div class='field-label'>
+            携帯電話
+            <i>(ハイフンなし)</i>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :user_phone, autofocus: true%>
+          </div>
+        </div>
+
+
+        <div class='field'>
+          <div class='field-label'>
+            職種
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :occupation, autofocus: true%>
+          </div>
+        </div>
+
         <div class='actions'>
           <%= f.submit "Create Account", class: 'btn'%>
         </div>

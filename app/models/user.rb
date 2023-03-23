@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
-end
+         with_options presence: true do
+         validates :name
+         validates :user_phone, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
+         validates :occupation
+         end
+  end
