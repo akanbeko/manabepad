@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_23_060710) do
+ActiveRecord::Schema.define(version: 2023_03_23_081918) do
+
+  create_table "site_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "site_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_site_data_on_site_id"
+    t.index ["user_id"], name: "index_site_data_on_user_id"
+  end
 
   create_table "sites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "progress", null: false
@@ -41,5 +50,7 @@ ActiveRecord::Schema.define(version: 2023_03_23_060710) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "site_data", "sites"
+  add_foreign_key "site_data", "users"
   add_foreign_key "sites", "users"
 end
