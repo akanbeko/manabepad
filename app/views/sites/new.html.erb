@@ -1,95 +1,97 @@
-<div class="sites-sell-contents">
 
-  <header class="sites-sell-header">
-    <%= link_to image_tag('logo.png' , size: '200x80'), "/" %>
-  </header>
+  <%= render "header" %>
+<div class="wrapper">
+     <%= render "side_bar" %>
+  
 
-<div class='chat-room-form'>
-  <h1>新規現場登録</h1>
-  <%=form_with model: @site, local: true do |f|%>
-   <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :progress, :状況, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :progress, class: 'chat__room_name chat-room-form__input', placeholder: '現場名を入力してください'%>
-      </div>
-    </div> 
-  <div class="chat-room-form__field">
-    <div class='chat-room-form__field--left'>
-    <%= f.label :sitename, :施工日, class: 'chat-room-form__label'%>
-    </div>
-    <div class='input-birth-wrap'>
-      <%= raw sprintf(
+    <div class='chat-room-form'>
+     <h1>新規現場登録</h1>
+      <%=form_with model: @site, local: true do |f|%>
+        <div class='chat-room-form__field'>
+          <div class='chat-room-form__field--left'>
+             <%= f.label :progress, :状況, class: 'chat-room-form__label'%>
+          </div>
+          <div class='chat-room-form__field--right'>
+             <%= f.text_field :progress, class: 'chat__room_name chat-room-form__input', placeholder: '現場名を入力してください'%>
+          </div>
+        </div> 
+
+        <div class="chat-room-form__field">
+          <div class='chat-room-form__field--left'>
+            <%= f.label :construcion_date, :施工日, class: 'chat-room-form__label'%>
+          </div>
+          <div class='input-construcion-wrap'>
+             <%= raw sprintf(
                   f.date_select(
-                    :birthday,
-                    class:'select-birth',
-                    id:"birth-date",
+                    :construcion_date,
+                    class:'select-construcion',
+                    id:"construcion-date",
                     use_month_numbers: true,
                     prompt:'--',
                     start_year: 2023,
                     end_year: (Time.now.year + 3),
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-    </div>
-   <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :sitename, :現場名, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :sitename, class: 'chat__room_name chat-room-form__input', placeholder: '現場名を入力してください'%>
-      </div>
-    </div> 
+          </div>
+           <div class='chat-room-form__field'>
+             <div class='chat-room-form__field--left'>
+               <%= f.label :sitename, :現場名, class: 'chat-room-form__label'%>
+             </div>
+             <div class='chat-room-form__field--right'>
+               <%= f.text_field :sitename, class: 'chat__room_name chat-room-form__input', placeholder: '現場名を入力してください'%>
+             </div>
+           </div> 
 
-       <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :home_address, :依頼元住所, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :home_address, class: 'chat__room_name chat-room-form__input', placeholder: '依頼元の住所を入力してください'%>
-      </div>
-      <div class="googleimage">
-      <%= link_to image_tag('google-maps-icon.png' , size: '300x200'), "/" %>
-    </div>
-    </div> 
+           <div class='chat-room-form__field'>
+             <div class='chat-room-form__field--left'>
+               <%= f.label :home_address, :依頼元住所, class: 'chat-room-form__label'%>
+             </div>
+             <div class='chat-room-form__field--right'>
+               <%= f.text_field :home_address, class: 'chat__room_name chat-room-form__input', placeholder: '依頼元の住所を入力してください'%>
+             </div>
+             <div class="googleimage">
+               <%= link_to image_tag('google-maps-icon.png' , size: '300x200'), "/" %>
+             </div>
+           </div> 
 
-      <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :site_address, :建設住所, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :site_address, class: 'chat__room_name chat-room-form__input', placeholder: '建設予定の住所を入力してください'%>
-      </div>
-          <div class="googleimage">
-      <%= link_to image_tag('google-maps-icon.png' , size: '300x200'), "/" %>
-    </div>
-    </div> 
+           <div class='chat-room-form__field'>
+             <div class='chat-room-form__field--left'>
+               <%= f.label :site_address, :建設住所, class: 'chat-room-form__label'%>
+             </div>
+             <div class='chat-room-form__field--right'>
+               <%= f.text_field :site_address, class: 'chat__room_name chat-room-form__input', placeholder: '建設予定の住所を入力してください'%>
+             </div>
+             <div class="googleimage">
+               <%= link_to image_tag('google-maps-icon.png' , size: '300x200'), "/" %>
+             </div>
+           </div> 
+
+           <div class='chat-room-form__field'>
+             <div class='chat-room-form__field--left'>
+               <%= f.label :site_phone, :連絡先, class: 'chat-room-form__label'%>
+             </div>
+             <div class='chat-room-form__field--right'>
+               <%= f.text_field :site_phone, class: 'chat__room_name chat-room-form__input', placeholder: '依頼元の連絡先を入力してください'%>
+             </div>
+           </div> 
 
           <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :site_phone, :連絡先, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :site_phone, class: 'chat__room_name chat-room-form__input', placeholder: '依頼元の連絡先を入力してください'%>
-      </div>
-    </div> 
+            <div class='chat-room-form__field--left'>
+              <%= f.label :remark, :備考, class: 'chat-room-form__label'%>
+            </div>
+            <div class='chat-room-form__field--right'>
+              <%= f.text_area :remark, class: 'chat__room_name chat-room-form__input', placeholder: 'その他追記があれば入力してください'%>
+            </div>
+          </div> 
 
           <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :remark, :備考, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_area :remark, class: 'chat__room_name chat-room-form__input', placeholder: 'その他追記があれば入力してください'%>
-      
-      
-      </div>
-    </div> 
+            <div class='chat-room-form__field--left'></div>
+              <div class='chat-room-form__field--right'>
+                <%= f.submit class: 'chat-room-form__action-btn'%>
+              </div>
+            </div>
+          </div>
+      <% end %>
+   </div>
 
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'></div>
-      <div class='chat-room-form__field--right'>
-        <%= f.submit class: 'chat-room-form__action-btn'%>
-      </div>
-    </div>
-  <% end %>
 </div>

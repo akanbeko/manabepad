@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="main-header">
+    <div class="left-header">
+      <div class="header-title">
+        <%= link_to image_tag('logo.png' , size: '200x70'), "/" %>
+      </div>
+    </div>
+  
+   <div class="main-bar-header">
+      <div class="header-name">
+       <%= link_to current_user.name, edit_user_path(current_user) %>
+      </div>
+      <div class="create-room">
+        <%= link_to "現場新規登録", new_site_path %>
+      </div>
+   </div>
+ </div>
+</div>

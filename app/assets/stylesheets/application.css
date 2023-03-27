@@ -17,64 +17,63 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+.wrapper{
   display: flex;
 }
 
+.main {
+  background-color:whitesmoke;
 
-.chat-header {
-  height: 100px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
+}
+.main-header {
+
+height: 80px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: darkgreen;
 }
 
 .side-bar {
-  background-color:darkgrey;
-  width: 300px;
-  height: 100vh;
+  background-color:gray;
+  width: 250px;
+  height: 200vh;
 }
 
-.side-bar-header {
-  height: 100px;
+
+.sites{
+  text-align: center;
+  font-size: 20px;
+}
+
+
+.main-bar-header {
+  height: 80px;
   padding: 0 20px;
-  background-color: darkgrey;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid white;
 }
 
 .header-name a{
   font-size: 18px;
+  margin-right: 30px;
   color: #FAFAFA;
   text-decoration: none;
 }
 
 .create-room a {
   font-size: 16px;
-  border: 1px solid lightblue;
+  border: 1px solid green;
   padding: 14px;
-  color: white;
+  color: black;
   text-decoration: none;
-  background-color: #38aef0;
+  background-color: #fff;
 }
 
-.chat-header {
-  height: 100px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
-}
 
-.header-title {
-  color: #333;
-  font-size: 24px;
+
+.site-name{
+  margin-bottom: 20px;
   margin-top: 20px;
-}
-
-.main-center {
-  background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
-  padding: 46px 40px 0;
 }
