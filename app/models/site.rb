@@ -1,7 +1,9 @@
 class Site < ApplicationRecord
   # has_one :site_datum
   belongs_to :user
+  has_one_attached :image
 
+  validates :image
   validates :progress, presence: true
   validates :construcion_date, presence: true
   validates :sitename, presence: true

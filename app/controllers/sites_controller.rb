@@ -1,6 +1,6 @@
 class SitesController < ApplicationController
   def index
-    @site = Site.includes(:user).order("created_at DESC")
+    @sites = Site.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -20,8 +20,7 @@ class SitesController < ApplicationController
   private
 
   def site_params
-    params.require(:site)
-    .permit(:sitename, :home_address, :site_address, :progress, :construcion_date, 
+    params.require(:site) .permit(:image, :sitename, :home_address, :site_address, :progress, :construcion_date, 
       :site_phone, :remark).merge(user_id: current_user.id)
   end
 end
