@@ -16,7 +16,8 @@
 }
 
 
-.site-img-content {
+
+.site-img-content{
   position: relative;
 }
 
@@ -28,10 +29,12 @@
   background-color: #FFF;
   color: black;
   padding: 1vw;
+  width: 33vh;
 }
 
 .site-name {
   font-size: 2.5vh;
+
 }
 
 
@@ -48,4 +51,15 @@
 
 .noimage-count {
   font-size: 2vh;
+}
+
+.list{
+  width: 37vh;
+  list-style: none;
+ margin: 0 20 50 10;
+}
+
+.lists{
+  display: flex;
+
 }

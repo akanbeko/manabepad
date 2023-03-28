@@ -75,6 +75,16 @@
              </div>
            </div> 
 
+           <div class="chat-room-form__field">
+             <div class='chat-room-form__field--left'>
+              <%= f.label :image, :写真, class: 'chat-room-form__label'%>
+             </div>
+             <div class='chat-room-form__field--right'>
+                <div class="click-upload">
+                <%= f.file_field :image, id:"site-image" %>
+      </div>
+    </div>
+
           <div class='chat-room-form__field'>
             <div class='chat-room-form__field--left'>
               <%= f.label :remark, :備考, class: 'chat-room-form__label'%>

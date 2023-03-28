@@ -1,29 +1,24 @@
 
   <%= render "header" %>
-  <div class="wrapper">
+<div class="wrapper">
   <%= render "side_bar" %>
 
+  <div class='chat-room-form'>
+   <div class="lists">
     <% @sites.each do |site|%>
       <li class='list'>
         <%= link_to site_path(site) do %>
-        <div class='site-img-content'>
-          <%= image_tag site.image, class: "site-img" %>
-
-         
-
-        </div>
-        <div class='site-info'>
-          <h3 class='site-name'>
-            <%= site.sitename %>
-          </h3>
-
-            <div class='noimage-btn'>
-              <%= image_tag "star.png", class:"noimage-icon" %>
-              <span class='noimage-count'>0</span>
-            </div>
+          <div class='site-img-content'>
+            <%= image_tag site.image, class: "site-img" %>
           </div>
-        </div>
+          <div class='site-info'>
+          <div class='site-name'>
+            <%= site.sitename %> 様邸
+          </div>
+          </div>
         <% end %>
       </li>
     <% end %>
+   </div>
+  </div>
 </div>
