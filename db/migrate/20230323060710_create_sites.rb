@@ -1,7 +1,7 @@
 class CreateSites < ActiveRecord::Migration[6.0]
   def change
     create_table :sites do |t|
-      t.integer    :progress,          null: false
+      t.integer    :progress_id,       null: false
       t.date       :construcion_date,  null: false
       t.references :user,              null: false, foreign_key: true
       t.string     :sitename,          null: false

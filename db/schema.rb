@@ -33,22 +33,13 @@ ActiveRecord::Schema.define(version: 2023_03_27_075439) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "site_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "site_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["site_id"], name: "index_site_data_on_site_id"
-    t.index ["user_id"], name: "index_site_data_on_user_id"
-  end
-
   create_table "sites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "progress", null: false
+    t.integer "progress_id", null: false
     t.date "construcion_date", null: false
     t.bigint "user_id", null: false
     t.string "sitename", null: false
     t.string "home_address", null: false
-    t.string "site_address"
+    t.string "site_address", null: false
     t.string "site_phone", null: false
     t.text "remark"
     t.datetime "created_at", precision: 6, null: false
@@ -72,7 +63,5 @@ ActiveRecord::Schema.define(version: 2023_03_27_075439) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "site_data", "sites"
-  add_foreign_key "site_data", "users"
   add_foreign_key "sites", "users"
 end

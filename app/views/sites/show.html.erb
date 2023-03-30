@@ -1,0 +1,74 @@
+ <%= render "header" %>
+<div class="wrapper">
+  <%= render "side_bar" %>
+
+ <div class="site-show">
+  <div class="edit-destroy_btn">
+    <% if user_signed_in? %> 
+    <% if current_user.id == @site.user_id  %> 
+      <%= link_to "編集", edit_site_path, method: :get, class: "site-btn" %>
+      <%= link_to "削除", site_path(@site.id), method: :delete, class:"site-destroy" %>
+    <% else %>
+    <% end %>
+    <% end %>
+  </div>
+
+    <%=form_with model: @site, local: true do |f|%>
+  <div class="site-box">
+
+    <h2 class="name">
+      <%= @site.sitename %>様邸
+    </h2>
+    <div class="site-img-content">
+    <% if @site.image.present? %>
+      <%= image_tag @site.image, class:"site-box-img" %>
+    </div>
+    <% else %>
+      <%= image_tag "noimage.png", class:"site-box-img" %>
+    <% end %>
+   
+
+ 
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-site">状況</th>
+          <td class="detail-value"><%= @site.progress.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-site">施工予定日</th>
+          <td class="detail-value"><%= @site.construcion_date %></td>
+        </tr>
+        <tr>
+          <th class="detail-site">現場名</th>
+          <td class="detail-value"><%= @site.sitename %></td>
+        </tr>
+        <tr>
+          <th class="detail-site">住まいの住所</th>
+          <td class="detail-value"><%= @site.home_address %>
+                       <div class="googleimage">
+               <%= link_to image_tag('google-maps-icon.png' , size: '300x200'), "/" %>
+             </div></td>
+        </tr>
+        
+        <tr>
+          <th class="detail-site">施工先住所</th>
+          <td class="detail-value"><%= @site.site_address %>
+                       <div class="googleimage">
+               <%= link_to image_tag('google-maps-icon.png' , size: '300x200'), "/" %>
+             </div>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-site">連絡先</th>
+          <td class="detail-value"><%= @site.site_phone %></td>
+        </tr>
+        <tr>
+          <th class="detail-site">備考</th>
+          <td class="detail-value"><%= @site.remark %></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+<% end %>

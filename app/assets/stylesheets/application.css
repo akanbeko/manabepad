@@ -19,11 +19,17 @@
 
 .wrapper{
   display: flex;
+  color: inherit;
+  margin-top: 80px;
 }
 
 .main {
-  background-color:whitesmoke;
-
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 0 20px 0;
 }
 .main-header {
 
@@ -32,18 +38,30 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 background-color: darkgreen;
+
 }
 
 .side-bar {
-  background-color:gray;
+  background-color:#696969;
+  display: flex;
   width: 250px;
-  height: 150vh;
+  height: 200vh;
+  justify-content: center;
+ color: #FAFAFA;
 }
 
 
 .sites{
-  text-align: center;
-  font-size: 20px;
+  list-style: none;
+  font-size: 30px;
+  margin-top: 10px;
+}
+.site {
+  padding: 40px 0 10px;
+}
+
+.side_site-name a {
+  color:#FAFAFA;
 }
 
 
@@ -73,7 +91,3 @@ background-color: darkgreen;
 
 
 
-.site-name{
-  margin-bottom: 20px;
-  margin-top: 20px;
-}

@@ -1,16 +1,19 @@
- 
+
 <div class="side-bar">
   <div class="sites">
    現場一覧表
+
     <div class="site">
-      <div class="site-name">
-         <a href="#">techroom1</a>
-      </div>
-    </div>
-    <div class="site">
-      <div class="site-name">
-        <a href="#">techroom2</a>
+      <div class="side_site-name">
+      <% @sites.each do |site|%>
+           <li class='side_list'>
+             <%= link_to site_path(site) do %> 
+             <%= site.sitename %> 様邸
+             <% end %>
+           </li>
+         <% end %>
       </div>
     </div>
   </div>
-</div>
+ </div>
+

@@ -4,13 +4,19 @@
   <%= render "side_bar" %>
 
   <div class='chat-room-form'>
+  新着順
    <div class="lists">
     <% @sites.each do |site|%>
       <li class='list'>
         <%= link_to site_path(site) do %>
+       <% if site.image.present? %>
           <div class='site-img-content'>
             <%= image_tag site.image, class: "site-img" %>
           </div>
+          <% else %>
+          <%= image_tag "noimage.png", class:"site-img" %>
+          <% end %>
+
           <div class='site-info'>
           <div class='site-name'>
             <%= site.sitename %> 様邸
